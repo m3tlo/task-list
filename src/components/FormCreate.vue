@@ -22,6 +22,11 @@
 <script setup>
 import { ref } from 'vue';
 
+const props = defineProps({
+  cards: {
+    type: Array
+  }
+})
 const emit = defineEmits([
   "set-card"
 ])
@@ -36,14 +41,15 @@ const newCard = ref({
 const setTitle = (event) => {
   const value = event.target.value
   newCard.title = value
+  
 }
 const setDescription = (event) => {
   const value = event.target.value
   newCard.description = value
 }
 const addCard = () => {
+  newCard.value.id = props.cards.length + 1
   emit("set-card", newCard.value)
-  console.log(newCard.value)
 }
 
 </script>
