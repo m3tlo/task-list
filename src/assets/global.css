@@ -4,21 +4,24 @@
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   }
   .container{
-    height: 90vh;
-    width: 90%;
-    margin: 0 auto;
-    padding: 2rem;
+    box-sizing: border-box;
+	  height: 90vh;
+	  width: 90%;
+	  margin: 0 auto;
+	  padding: 1.5rem;
+    position: relative;
+	  
   }
   .wrapper{
-  position: absolute;
-  top: 0;
-  left: -3.7%;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(65, 63, 63, 0.884);
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
+  	position: absolute;
+	top: -55px;
+	left: -5.6%;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(65, 63, 63, 0.884);
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
 }
   .form {
     cursor: auto;

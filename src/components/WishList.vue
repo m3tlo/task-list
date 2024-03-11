@@ -1,13 +1,15 @@
 
 <template>
-   <h1 style="text-align: center;">Список задач</h1>
-   <ul class="wish-list">
+   <p v-if="cards.length <= 0" style="text-align: center;">Список задач пуст</p>
+   <ul v-else class="wish-list">
     <app-card 
       v-for="(card, index) in cards" 
       :key="card.id"
       :index="index"
       :card="card"
       @click="emit('click-by-card', card)"
+      @delete-card="emit('delete-cards', card)"
+
     />
    </ul>
     <button @click="emit('open-create-form')" >+</button>
@@ -24,7 +26,7 @@
   })
 
   const emit = defineEmits([
-    'click-by-card', 'open-create-form'
+    'click-by-card', 'open-create-form', 'delete-cards'
   ])
 
 </script>
@@ -38,8 +40,8 @@
 }
 button{
   position: absolute;
-	bottom: 0;
-	right: 0;
+	bottom: 10%;
+	right: 2%;
   background: none;
   border-radius: 50%;
   width: 50px;
